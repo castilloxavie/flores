@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %} Editar  variedad de rosa  {% endblock %}
+
+
+{% block contenido %}
+
+    <div class="card">
+        <div class="card-header">
+            Editar la informacion de la rosa
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Datos de la rosa</h4>
+
+           {% include 'capullos/form.html' %}
+
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+
+{% endblock %}

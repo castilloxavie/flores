@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+
+{% block contenido %}
+    
+   <!-- Encabezado  de Bienvenida-->
+    <div class="jumbotron">
+        <h1 class="display-3">Bienvenidos al sitio de las bellas rosas</h1>
+        <p class="lead">Empezar a ingresar las nuevas variedades</p>
+        <hr class="my-2">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'las_flores' %}" role="button">Comenzar</a>
+        </p>
+    </div>
+
+{% endblock %}

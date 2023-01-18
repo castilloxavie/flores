@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de rosas {% endblock %}
+
+
+{% block contenido %}
+
+    <!--los estilos son traidos de Bootstrap4-->
+    <!--contenido de multimedi con la etiqueta card -->
+    <div class="card">
+        <div class="card-header">
+            <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Agregar nueva variedad de rosa</a>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Rosas</h4>
+
+            <!--tablas de contenido-->
+            <table class="table">
+                <!--columnas de la tabla-->
+                <!--ciclo para mostrar todos los registros que requeremos-->
+
+                {% for rosa in rosas %}
+
+
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Imagenes</th>
+                    <th>Descripcion</th>
+                    <th>Acciones </th>
+                </tr>
+                </thead>
+
+                <!--filas de la tabla-->
+                <tbody>
+                <tr>
+                    <td>{{ rosa.id }}</td>
+                    <td>{{ rosa.variedad }}</td>
+                    <td>
+                        <img src="{{ rosa.imagen.url }}", height="100" />
+                    </td>
+                    <td>{{ rosa.descripcion }}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-primary" href="{% url 'editar' rosa.id %}" role="button">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' rosa.id %}" role="button">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer text-muted">
+            Footer
+        </div>
+    </div>
+
+{% endblock %}
